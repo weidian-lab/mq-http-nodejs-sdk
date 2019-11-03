@@ -1,0 +1,65 @@
+{
+  "name": "mq-http-sdk",
+  "version": "1.0.2",
+  "description": "Aliyun Message Queue(MQ) Nodejs Http SDK",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/aliyunmq/mq-http-nodejs-sdk"
+  },
+  "scripts": {
+    "test": "mocha -t 20000 -R spec test/*.test.js",
+    "lint": "eslint --fix lib index.js",
+    "docs": "jsdoc -c jsdoc-conf.json -R README.md -t ./node_modules/ink-docstrap/template lib/* -d docs/"
+  },
+  "author": "aliyunmq",
+  "license": "MIT",
+  "dependencies": {
+    "chalk": "^2.4.2",
+    "debug": "^4.1.1",
+    "dnscache": "^1.0.2",
+    "egg-logger": "^2.4.1",
+    "got": "^10.0.0-alpha.3.2",
+    "httpx": "^2.1.1",
+    "kitx": "^2.0.0",
+    "pure-func": "^2.0.19",
+    "xml2js": "^0.4.17"
+  },
+  "files": [
+    "lib",
+    "index.js"
+  ],
+  "devDependencies": {
+    "@babel/cli": "^7.5.5",
+    "@babel/core": "^7.5.5",
+    "@babel/plugin-proposal-class-properties": "^7.5.5",
+    "@babel/plugin-proposal-decorators": "^7.4.4",
+    "@babel/plugin-proposal-export-default-from": "^7.5.2",
+    "@babel/plugin-proposal-export-namespace-from": "^7.5.2",
+    "@babel/plugin-syntax-object-rest-spread": "^7.2.0",
+    "@babel/preset-env": "^7.5.5",
+    "@babel/runtime": "^7.5.5",
+    "eslint": "^6.6.0",
+    "eslint-config-standard-airbnb-base": "^1.0.2",
+    "eslint-friendly-formatter": "^4.0.1",
+    "expect.js": "^0.3.1",
+    "ink-docstrap": "^1.3.2",
+    "jsdoc": "^3.5.2",
+    "mocha": "^6.2.2",
+    "nyc": "^14.1.1",
+    "shortid": "^2.2.15"
+  },
+  "keywords": [
+    "MQ",
+    "Message Queue",
+    "Aliyun",
+    "Alicloud"
+  ],
+  "bugs": {
+    "url": "https://github.com/aliyunmq/mq-http-nodejs-sdk/issues"
+  },
+  "homepage": "https://www.aliyun.com/product/ons"
+}
