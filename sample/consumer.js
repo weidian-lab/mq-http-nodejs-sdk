@@ -9,10 +9,10 @@ const {
 
 const client = new MQClient(endpoint, accessKeyId, accessKeySecret)
 
-const consumer = client.getConsumer(instanceId, topic, consumerGroup, '')
+const consumer = client.getConsumer(instanceId, topic, consumerGroup, 'test')
 
 consumer.subscribe(async msg => {
-  client.logger.info('>>>>>>>', msg.msgId, msg.body, Date.now(), consumer.pendingCount)
+  client.logger.info('>>>>>>>', msg, Date.now(), consumer.pendingCount)
   await sleep(Math.random() * 1000)
   client.logger.info('<<<<<<<', msg.body)
 })

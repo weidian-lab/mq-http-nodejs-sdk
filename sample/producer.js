@@ -13,13 +13,13 @@ const producer = client.getProducer(instanceId, topic)
 const start = async () => {
   try {
     // 循环发送100条消息
-    for (let i = 0; i < 10; i += 1) {
-      const timestamp = Date.now() + 10000
+    for (let i = 0; i < 5; i += 1) {
+      const timestamp = Date.now() + 2000
       // const ret = await producer.sendMsg(JSON.stringify({
-      const ret = producer.sendMsg(JSON.stringify({
+      const ret = await producer.sendMsg(JSON.stringify({
         id: `${i}__${shortid.generate()}`,
         timestamp
-      }), null, { startDeliverTime: timestamp })
+      }), 'test', { startDeliverTime: timestamp })
       client.logger.info(i, ret)
     }
   } catch (e) {
