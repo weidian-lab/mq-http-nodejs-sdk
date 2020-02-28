@@ -1,5 +1,6 @@
 # MQ Nodejs HTTP SDK
 
+
 Alyun MQ Documents: http://www.aliyun.com/product/ons
 
 Aliyun MQ Console: https://ons.console.aliyun.com
@@ -30,3 +31,7 @@ npm install --save
 [Transaction Message](https://github.com/aliyunmq/mq-http-samples/tree/101-dev/nodejs/trans-producer.js)
 
 Note for 1.0.2: Http consumer only support timer msg(less than 3 days), no matter the msg is produced from http or tcp protocal.
+
+## 注意
+
+* 默认实例instanceId为空
