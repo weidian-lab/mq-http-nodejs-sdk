@@ -7,7 +7,10 @@ const {
   accessKeyId, accessKeySecret, topic, endpoint, consumerGroup, instanceId
 } = require('./config.js')
 
-const client = new MQClient(endpoint, accessKeyId, accessKeySecret)
+const client = new MQClient(endpoint, accessKeyId, accessKeySecret, null, {
+  pullBatchSize: 2,
+  pullThresholdForQueue: 3
+})
 
 const consumer = client.getConsumer(instanceId, topic, consumerGroup, 'test')
 
