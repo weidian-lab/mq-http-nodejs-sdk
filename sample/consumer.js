@@ -9,13 +9,14 @@ const {
 
 const client = new MQClient(endpoint, accessKeyId, accessKeySecret, null, {
   pullBatchSize: 2,
+  pullTimeDelayMillsWhenFlowControl: 1000,
   pullThresholdForQueue: 3
 })
 
 const consumer = client.getConsumer(instanceId, topic, consumerGroup, 'test')
 
 consumer.subscribe(async msg => {
-  client.logger.info('>>>>>>>', msg, Date.now(), consumer.pendingCount)
+  const body = JSON.parse(msg.body)
+  client.logger.info('>>>>>>>', Date.now() - body.timestamp, consumer.pendingCount)
   await sleep(Math.random() * 1000)
-  client.logger.info('<<<<<<<', msg.body)
 })
