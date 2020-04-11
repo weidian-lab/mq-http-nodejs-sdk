@@ -14,7 +14,7 @@ const start = async () => {
   try {
     // 循环发送100条消息
     for (let i = 0; i < 50; i += 1) {
-      const timestamp = Date.now() + 1000 * (i / 5)
+      const timestamp = Date.now() + 2000 * (i / 5)
       // const ret = await producer.sendMsg(JSON.stringify({
       const ret = await producer.sendMsg(JSON.stringify({
         id: `${i}__${shortid.generate()}`,

@@ -7,25 +7,38 @@ const {
   accessKeyId, accessKeySecret, topic, endpoint, consumerGroup, instanceId
 } = require('./config.js')
 
+let clusterPendingCount = 0
+
+const incrementPendingCount = async count => {
+  clusterPendingCount += count
+  return clusterPendingCount
+}
+
 const client = new MQClient(endpoint, accessKeyId, accessKeySecret, null, {
   pullBatchSize: 2,
-  pullTimeDelayMillsWhenFlowControl: 1000 / (5 + 3),
+  pullTimeDelayMillsWhenFlowControl: 3000 / (5 + 3),
   pullThresholdForQueue: 5
 })
-
-const consumer = client.getConsumer(instanceId, topic, consumerGroup, 'test')
-const consumer2 = client.getConsumer(instanceId, topic, consumerGroup, 'test')
-const consumer3 = client.getConsumer(instanceId, topic, consumerGroup, 'test')
 
 let delay = 0
 let count = 0
 const onMsg = uid => async msg => {
-  const body = JSON.parse(msg.body)
-  delay += Date.now() - body.timestamp
-  count += 1
-  client.logger.info(uid, '>>>>>>>', delay, count, delay / count)
-  await sleep(1000)
 }
-consumer.subscribe(onMsg(1))
-consumer2.subscribe(onMsg(2))
-consumer3.subscribe(onMsg(3))
+
+const subscribeMsg = consumer => {
+  consumer.subscribe(async msg => {
+    const pendingCount = await incrementPendingCount(1)
+    const body = JSON.parse(msg.body)
+    delay += Date.now() - body.timestamp
+    count += 1
+    client.logger.info(consumer.nonce, '>>>>>>>', delay, count, delay / count, consumer.pendingCount, pendingCount)
+    await sleep(3000)
+    await incrementPendingCount(-1)
+  })
+}
+
+[
+  client.getConsumer(instanceId, topic, consumerGroup, 'test'),
+  client.getConsumer(instanceId, topic, consumerGroup, 'test'),
+  client.getConsumer(instanceId, topic, consumerGroup, 'test')
+].map(subscribeMsg)
