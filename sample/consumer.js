@@ -28,7 +28,10 @@ const checkDuplicatedMsg = async key => {
 const client = new MQClient(endpoint, accessKeyId, accessKeySecret, null, {
   pullBatchSize: 1,
   pullTimeDelayMillsWhenFlowControl: 1200,
-  pullThresholdForQueue: 5
+  pullThresholdForQueue: 5,
+  clusterPendingLimit: 6,
+  incrementPendingCount,
+  checkDuplicatedMsg
 })
 
 let delay = 0
@@ -43,10 +46,6 @@ const subscribeMsg = consumer => {
     client.logger.info(consumer.nonce, '>>>>>>>', delay, count, delay / count, consumer.pendingCount, clusterPendingCounts)
     await sleep(3000)
     await incrementPendingCount('test', -1)
-  }, {
-    clusterPendingLimit: 6,
-    incrementPendingCount,
-    checkDuplicatedMsg
   })
 }
 
