@@ -35,3 +35,4 @@ Note for 1.0.2: Http consumer only support timer msg(less than 3 days), no matte
 ## 注意
 
 * 默认实例instanceId为空
+* consumerGroup和tag需要保持订阅一致
