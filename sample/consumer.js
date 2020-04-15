@@ -30,7 +30,8 @@ const client = new MQClient(endpoint, accessKeyId, accessKeySecret, null, {
   pullTimeDelayMillsWhenFlowControl: 1200,
   pullThresholdForQueue: 5,
   clusterPendingLimit: 6,
-  incrementPendingCount,
+  incrClusterPendingCount: key => incrementPendingCount(key, 1),
+  decrClusterPendingCount: key => incrementPendingCount(key, -1),
   checkDuplicatedMsg
 })
 
@@ -39,13 +40,11 @@ let count = 0
 
 const subscribeMsg = consumer => {
   consumer.subscribe(async msg => {
-    await incrementPendingCount('test', 1)
     const body = JSON.parse(msg.body)
     delay += Date.now() - body.timestamp
     count += 1
     client.logger.info(consumer.nonce, msg.tag, '>>>>>>>', delay, count, delay / count, consumer.pendingCount, clusterPendingCounts)
     await sleep(3000)
-    await incrementPendingCount('test', -1)
   })
 }
 

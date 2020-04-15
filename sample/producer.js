@@ -7,6 +7,8 @@ const {
   accessKeyId, accessKeySecret, topic, endpoint, instanceId
 } = require('./config.js')
 
+console.log(instanceId, topic)
+
 const client = new MQClient(endpoint, accessKeyId, accessKeySecret)
 const producer = client.getProducer(instanceId, topic)
 
