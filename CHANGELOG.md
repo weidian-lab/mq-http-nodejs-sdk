@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.5.1](https://github.com/aliyunmq/mq-http-nodejs-sdk/compare/v1.5.0...v1.5.1) (2020-04-15)
+
+
+### Bug Fixes
+
+* clusterPendingLimit ([454be6a](https://github.com/aliyunmq/mq-http-nodejs-sdk/commit/454be6ae2c9b44d2ffb4cf358dacc4c585a43e3a))
+
 ## [1.5.0](https://github.com/aliyunmq/mq-http-nodejs-sdk/compare/v1.3.0...v1.5.0) (2020-04-15)
 
 
