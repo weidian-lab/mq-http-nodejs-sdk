@@ -1,6 +1,6 @@
 {
   "name": "mq-http-sdk",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "description": "Aliyun Message Queue(MQ) Nodejs Http SDK",
   "main": "index.js",
   "directories": {
@@ -22,7 +22,6 @@
     "debug": "^4.1.1",
     "dnscache": "^1.0.2",
     "egg-logger": "^2.4.1",
-    "got": "^10.0.0-alpha.3.2",
     "httpx": "^2.1.1",
     "kitx": "^2.0.0",
     "pure-func": "^2.0.19",
