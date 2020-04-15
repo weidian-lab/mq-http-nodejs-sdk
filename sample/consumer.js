@@ -43,16 +43,16 @@ const subscribeMsg = consumer => {
     const body = JSON.parse(msg.body)
     delay += Date.now() - body.timestamp
     count += 1
-    client.logger.info(consumer.nonce, '>>>>>>>', delay, count, delay / count, consumer.pendingCount, clusterPendingCounts)
+    client.logger.info(consumer.nonce, msg.tag, '>>>>>>>', delay, count, delay / count, consumer.pendingCount, clusterPendingCounts)
     await sleep(3000)
     await incrementPendingCount('test', -1)
   })
 }
 
 [
-  client.getConsumer(instanceId, topic, consumerGroup, 'test'),
-  client.getConsumer(instanceId, topic, consumerGroup, 'test'),
-  client.getConsumer(instanceId, topic, consumerGroup, 'test')
+  client.getConsumer(instanceId, topic, consumerGroup, 'test||test2'),
+  client.getConsumer(instanceId, topic, consumerGroup, 'test||test2'),
+  client.getConsumer(instanceId, topic, consumerGroup, 'test||test2')
 ].map(subscribeMsg)
 
 setInterval(() => {
