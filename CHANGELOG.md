@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.5.2](https://github.com/aliyunmq/mq-http-nodejs-sdk/compare/v1.5.1...v1.5.2) (2020-04-16)
+
+
+### Bug Fixes
+
+* safeClose wait pulling ([f399cdd](https://github.com/aliyunmq/mq-http-nodejs-sdk/commit/f399cdd4b11cf9c33db1a9bc13256d2205831d0d))
+
 ### [1.5.1](https://github.com/aliyunmq/mq-http-nodejs-sdk/compare/v1.5.0...v1.5.1) (2020-04-15)
 
 
