@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.6.1](https://github.com/aliyunmq/mq-http-nodejs-sdk/compare/v1.6.0...v1.6.1) (2020-04-23)
+
+
+### Bug Fixes
+
+* cleanLoopState ([22368d4](https://github.com/aliyunmq/mq-http-nodejs-sdk/commit/22368d444c4eec16e5fda06efd430b073c767eb5))
+
 ## [1.6.0](https://github.com/aliyunmq/mq-http-nodejs-sdk/compare/v1.5.2...v1.6.0) (2020-04-22)
 
 
