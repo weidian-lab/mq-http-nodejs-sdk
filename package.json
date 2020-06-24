@@ -1,6 +1,6 @@
 {
   "name": "mq-http-sdk",
-  "version": "1.6.2",
+  "version": "1.7.0",
   "description": "Aliyun Message Queue(MQ) Nodejs Http SDK",
   "main": "index.js",
   "directories": {

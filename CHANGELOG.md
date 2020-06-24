@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.7.0](https://github.com/aliyunmq/mq-http-nodejs-sdk/compare/v1.6.2...v1.7.0) (2020-06-24)
+
+
+### Features
+
+* 预防ONS网络抖动 ([df74789](https://github.com/aliyunmq/mq-http-nodejs-sdk/commit/df747897f222b9f04807f14d9bbc08baa1ffed02))
+
 ### [1.6.2](https://github.com/aliyunmq/mq-http-nodejs-sdk/compare/v1.6.1...v1.6.2) (2020-06-20)
 
 
