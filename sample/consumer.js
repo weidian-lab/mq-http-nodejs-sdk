@@ -30,8 +30,10 @@ const client = new MQClient(endpoint, accessKeyId, accessKeySecret, null, {
   pullTimeDelayMillsWhenFlowControl: 1200,
   pullThresholdForQueue: 5,
   clusterPendingLimit: 6,
-  incrClusterPendingCount: key => incrementPendingCount(key, 1),
-  decrClusterPendingCount: key => incrementPendingCount(key, -1),
+  incrClusterPendingCount: (group, consumer) => {
+    return incrementPendingCount(group + consumer.messageTag, 1)
+  },
+  decrClusterPendingCount: (group, consumer) => incrementPendingCount(group + consumer.messageTag, -1),
   checkDuplicatedMsg
 })
 
