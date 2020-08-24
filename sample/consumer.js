@@ -2,7 +2,7 @@ const { sleep } = require('pure-func/promise')
 const store = require('pure-func/simpleExpireStore')({}, timeout = 300000)
 const {
   MQClient
-} = require('../')
+} = require('..')
 
 const {
   accessKeyId, accessKeySecret, topic, endpoint, consumerGroup, instanceId
@@ -49,9 +49,9 @@ const subscribeMsg = consumer => {
 }
 
 [
-  client.getConsumer(instanceId, topic, consumerGroup, 'test||test2'),
-  client.getConsumer(instanceId, topic, consumerGroup, 'test||test2'),
-  client.getConsumer(instanceId, topic, consumerGroup, 'test||test2')
+  client.getConsumer(instanceId, topic, 'GID_LAB_TIMER_DEV_test_1_hc', 'test1||test2'),
+  client.getConsumer(instanceId, topic, 'GID_LAB_TIMER_DEV_test_1_hc', 'test5||test6')
+  // client.getConsumer(instanceId, topic, 'GID_LAB_TIMER_DEV_test_2_hc', 'test5||test6')
 ].map(subscribeMsg)
 
 setInterval(() => {

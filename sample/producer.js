@@ -21,7 +21,7 @@ const start = async () => {
       const ret = await producer.sendMsg(JSON.stringify({
         id: `${i}__${shortid.generate()}`,
         timestamp
-      }), 'test', { startDeliverTime: timestamp })
+      }), 'test1', { startDeliverTime: timestamp })
       client.logger.info(i, ret)
     }
     for (let i = 0; i < 10; i += 1) {
@@ -30,7 +30,7 @@ const start = async () => {
       const ret = await producer.sendMsg(JSON.stringify({
         id: `${i}__${shortid.generate()}`,
         timestamp
-      }), 'test2', { startDeliverTime: timestamp })
+      }), 'test6', { startDeliverTime: timestamp })
       client.logger.info(i, ret)
     }
   } catch (e) {
