@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/aliyunmq/mq-http-nodejs-sdk"
+    "url": "https://github.com/weidian-lab/mq-http-nodejs-sdk"
   },
   "scripts": {
     "test": "mocha -t 20000 -R spec test/*.test.js",
@@ -59,7 +59,7 @@
     "Alicloud"
   ],
   "bugs": {
-    "url": "https://github.com/aliyunmq/mq-http-nodejs-sdk/issues"
+    "url": "https://github.com/weidian-lab/mq-http-nodejs-sdk/issues"
   },
   "homepage": "https://www.aliyun.com/product/ons"
 }
