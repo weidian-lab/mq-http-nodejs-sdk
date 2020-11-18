@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.7.1](https://github.com/weidian-lab/mq-http-nodejs-sdk/compare/v1.7.0...v1.7.1) (2020-11-18)
+
 ## [1.7.0](https://github.com/aliyunmq/mq-http-nodejs-sdk/compare/v1.6.2...v1.7.0) (2020-06-24)
 
 
